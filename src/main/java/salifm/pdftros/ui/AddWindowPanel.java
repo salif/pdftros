@@ -1,27 +1,33 @@
 /*
- * Copyright (c) 2021 Salif Mehmed
- * This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/.
-**/
+  Copyright (c) 2021 Salif Mehmed
+  This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at http://mozilla.org/MPL/2.0/.
+*/
 
 package salifm.pdftros.ui;
-
-import javax.swing.*;
 
 import salifm.pdftros.ui.handlers.AddButtonHandler;
 import salifm.pdftros.ui.handlers.NewFolderHandler;
 import salifm.pdftros.ui.handlers.RefreshFoldersHandler;
 
-import java.awt.*;
 import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Consumer;
 
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
 public class AddWindowPanel extends JPanel {
 
-	private static final long serialVersionUID = -5321973884809182673L;
+	private static final long serialVersionUID = -4848686136035751295L;
 
 	public AddWindowPanel(String[] folders, String pdf, Consumer<Void> closeCallback) {
 		super(new BorderLayout());
@@ -36,7 +42,7 @@ public class AddWindowPanel extends JPanel {
 		syncCheckBoxes(checkboxesPanel, folders, checkboxes);
 		super.add(new JScrollPane(checkboxesPanel), BorderLayout.CENTER);
 
-		final JPanel buttonsPanel = new JPanel(new GridLayout(1, 2));
+		final JPanel buttonsPanel = new JPanel(new GridLayout(1, 3));
 
 		final JButton refreshButton = new JButton("refresh");
 		refreshButton.addActionListener(new RefreshFoldersHandler(checkboxesPanel, checkboxes));

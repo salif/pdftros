@@ -1,13 +1,15 @@
 /*
- * Copyright (c) 2021 Salif Mehmed
- * This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/.
-**/
+  Copyright (c) 2021 Salif Mehmed
+  This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at http://mozilla.org/MPL/2.0/.
+*/
 
 package salifm.pdftros.config;
 
 import java.nio.file.Path;
+
+import salifm.pdftros.App;
 
 public class Config {
 	private static final String DEFAULT_LOOK_AND_FEEL = "com.sun.java.swing.plaf.gtk.GTKLookAndFeel";
@@ -47,5 +49,10 @@ public class Config {
 
 	public static void setOrgDir(String orgDir) {
 		Config.orgDir = orgDir;
+	}
+
+	public static void save() {
+		// TODO
+		App.showError(new Exception("Not implemented yet!"));
 	}
 }

@@ -5,10 +5,17 @@
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-package salifm.pdftros;
+package salifm.pdftros.ui;
 
-public class Main {
-	public static void main(String[] args) {
-		new App().start(args);
+import javax.swing.JPanel;
+
+public class MainWindowPanel extends JPanel {
+
+	private static final long serialVersionUID = 5620631415732606469L;
+
+	public MainWindowPanel() {
+		super.add(new ThemePanel());
 	}
 }
+
+
