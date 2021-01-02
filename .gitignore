@@ -1,4 +1,3 @@
-# Compiled class file
 *.class
 *.log
 *.ctxt
@@ -13,7 +12,9 @@
 hs_err_pid*
 .classpath
 .project
+pdftros.iml
 .settings/
 .vscode/
+.idea/
 target/
 .DS_Store
