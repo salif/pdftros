@@ -1,17 +1,29 @@
-package salifm.pdftros;
+/*
+ * Copyright (c) 2021 Salif Mehmed
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+**/
+
+package salifm.pdftros.ui;
 
 import javax.swing.*;
+
+import salifm.pdftros.ui.handlers.AddButtonHandler;
+import salifm.pdftros.ui.handlers.NewFolderHandler;
+import salifm.pdftros.ui.handlers.RefreshFoldersHandler;
+
 import java.awt.*;
 import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Consumer;
 
-class AddWindowPanel extends JPanel {
+public class AddWindowPanel extends JPanel {
 
 	private static final long serialVersionUID = -5321973884809182673L;
 
-	AddWindowPanel(String[] folders, String pdf, Consumer<Void> closeCallback) {
+	public AddWindowPanel(String[] folders, String pdf, Consumer<Void> closeCallback) {
 		super(new BorderLayout());
 
 		final File file = new File(pdf);
@@ -41,7 +53,7 @@ class AddWindowPanel extends JPanel {
 		super.add(buttonsPanel, BorderLayout.SOUTH);
 	}
 
-	static void syncCheckBoxes(JPanel checkboxesPanel, String[] folders, Set<JCheckBox> checkboxes) {
+	public static void syncCheckBoxes(JPanel checkboxesPanel, String[] folders, Set<JCheckBox> checkboxes) {
 		checkboxesPanel.removeAll();
 		checkboxesPanel.revalidate();
 		checkboxesPanel.repaint();

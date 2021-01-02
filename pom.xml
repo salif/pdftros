@@ -4,7 +4,7 @@
 
     <groupId>salifm</groupId>
     <artifactId>pdftros</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
 
