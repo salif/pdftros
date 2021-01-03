@@ -19,6 +19,10 @@ public class Config {
 	private static String mainDir;
 	private static String allDir;
 	private static String orgDir;
+	private static int addWindowWidth;
+	private static int addWindowHeight;
+	private static int mainWindowWidth;
+	private static int mainWindowHeight;
 
 	public static void sync() {
 		userHome = System.getProperty("user.home");
@@ -26,6 +30,10 @@ public class Config {
 		mainDir = preferences.get("mainDir", "pdfs");
 		allDir = preferences.get("allDir", "all");
 		orgDir = preferences.get("orgDir", "organized");
+		addWindowWidth = preferences.getInt("addWindowWidth", 512);
+		addWindowHeight = preferences.getInt("addWindowHeight", 512);
+		mainWindowWidth = preferences.getInt("mainWindowWidth", 512);
+		mainWindowHeight = preferences.getInt("mainWindowHeight", 512);
 	}
 
 	public static String getLookAndFeel() {
@@ -58,6 +66,38 @@ public class Config {
 
 	public static void setOrgDir(String orgDir) {
 		preferences.put("orgDir", orgDir);
+	}
+
+	public static int getAddWindowWidth() {
+		return addWindowWidth;
+	}
+
+	public static void setAddWindowWidth(int addWindowWidth) {
+		preferences.putInt("addWindowWidth", addWindowWidth);
+	}
+
+	public static int getAddWindowHeight() {
+		return addWindowHeight;
+	}
+
+	public static void setAddWindowHeight(int addWindowHeight) {
+		preferences.putInt("addWindowHeight", addWindowHeight);
+	}
+
+	public static int getMainWindowWidth() {
+		return mainWindowWidth;
+	}
+
+	public static void setMainWindowWidth(int mainWindowWidth) {
+		preferences.putInt("mainWindowWidth", mainWindowWidth);
+	}
+
+	public static int getMainWindowHeight() {
+		return mainWindowHeight;
+	}
+
+	public static void setMainWindowHeight(int mainWindowHeight) {
+		preferences.putInt("mainWindowHeight", mainWindowHeight);
 	}
 
 	public static void flush() throws BackingStoreException {

@@ -5,26 +5,29 @@
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-package salifm.pdftros.ui.handlers;
+package salifm.pdftros.ui.addwindow.handler;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Set;
 
-import salifm.pdftros.ui.AddWindowPanel;
-import salifm.pdftros.util.FileUtil;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
+
 import salifm.pdftros.App;
+import salifm.pdftros.ui.addwindow.CheckBoxesPanel;
+import salifm.pdftros.util.FileUtil;
 
 
 public class NewFolderHandler implements ActionListener {
 
-	private JPanel checkboxesPanel;
-	private Set<JCheckBox> checkboxes;
+	private final CheckBoxesPanel checkBoxesPanel;
+	private final Set<JCheckBox> checkboxes;
 
-	public NewFolderHandler(JPanel checkboxesPanel, Set<JCheckBox> checkboxes) {
-		this.checkboxesPanel = checkboxesPanel;
+	public NewFolderHandler(CheckBoxesPanel checkBoxesPanel, Set<JCheckBox> checkboxes) {
+		this.checkBoxesPanel = checkBoxesPanel;
 		this.checkboxes = checkboxes;
 	}
 
@@ -38,7 +41,7 @@ public class NewFolderHandler implements ActionListener {
 				App.showError(ioException);
 				return;
 			}
-			AddWindowPanel.syncCheckBoxes(this.checkboxesPanel, FileUtil.getFolders(), this.checkboxes);
+			this.checkBoxesPanel.sync(FileUtil.getFolders(), this.checkboxes);
 		}
 	}
 }

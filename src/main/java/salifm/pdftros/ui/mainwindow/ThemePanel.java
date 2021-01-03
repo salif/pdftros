@@ -5,7 +5,7 @@
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-package salifm.pdftros.ui;
+package salifm.pdftros.ui.mainwindow;
 
 import java.util.Arrays;
 
@@ -16,7 +16,7 @@ import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
-import salifm.pdftros.ui.handlers.SetThemeHandler;
+import salifm.pdftros.ui.mainwindow.handler.SetThemeHandler;
 
 public class ThemePanel extends JPanel {
 

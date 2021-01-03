@@ -9,16 +9,15 @@ package salifm.pdftros.ui;
 
 import javax.swing.JFrame;
 
-public class AddWindow extends JFrame {
+public class Window extends JFrame {
 
-	private static final long serialVersionUID = 2586174935411379563L;
+	private static final long serialVersionUID = 3831063236809488549L;
 
-	public AddWindow(String[] folders, String pdf) {
-		super.setTitle("Add pdf");
+	public Window(String title, int width, int height) {
+		super.setTitle(title);
 		super.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		super.setSize(400, 300);
+		super.setSize(width, height);
 		super.setLocationRelativeTo(null);
-		super.setContentPane(new AddWindowPanel(folders, pdf, (Void v) -> {super.dispose();}));
 	}
 
 	public void start() {

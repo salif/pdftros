@@ -14,8 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 import salifm.pdftros.config.Config;
-import salifm.pdftros.ui.AddWindow;
-import salifm.pdftros.ui.MainWindow;
+import salifm.pdftros.ui.addwindow.AddWindow;
+import salifm.pdftros.ui.mainwindow.MainWindow;
 import salifm.pdftros.util.FileUtil;
 
 public class App {

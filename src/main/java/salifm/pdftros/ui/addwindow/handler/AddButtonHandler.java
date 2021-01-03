@@ -5,26 +5,29 @@
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-package salifm.pdftros.ui.handlers;
+package salifm.pdftros.ui.addwindow.handler;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.Set;
 import java.util.function.Consumer;
+
+import javax.swing.AbstractButton;
+import javax.swing.JCheckBox;
+
 import salifm.pdftros.App;
 
 public class AddButtonHandler implements ActionListener {
 
 	private final File file;
 	private final Set<JCheckBox> checkboxes;
-	private final Consumer<Void> closeCallback;
+	private final Consumer<Void> consumer;
 
-	public AddButtonHandler(File file, Set<JCheckBox> checkboxes, Consumer<Void> closeCallback) {
+	public AddButtonHandler(File file, Set<JCheckBox> checkboxes, Consumer<Void> consumer) {
 		this.file = file;
 		this.checkboxes = checkboxes;
-		this.closeCallback = closeCallback;
+		this.consumer = consumer;
 	}
 
 	@Override
@@ -32,10 +35,10 @@ public class AddButtonHandler implements ActionListener {
 		final String[] folders = checkboxes.stream().filter(AbstractButton::isSelected)
 			.map(AbstractButton::getText).toArray(String[]::new);
 		if (folders.length == 0) {
-			closeCallback.accept(null);
+			this.consumer.accept(null);
 			return;
 		}
 		App.addPdfs(this.file, folders);
-		closeCallback.accept(null);
+		this.consumer.accept(null);
 	}
 }

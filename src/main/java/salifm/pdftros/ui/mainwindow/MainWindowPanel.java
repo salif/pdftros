@@ -5,7 +5,7 @@
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-package salifm.pdftros.ui;
+package salifm.pdftros.ui.mainwindow;
 
 import javax.swing.JPanel;
 
@@ -17,5 +17,3 @@ public class MainWindowPanel extends JPanel {
 		super.add(new ThemePanel());
 	}
 }
-
-

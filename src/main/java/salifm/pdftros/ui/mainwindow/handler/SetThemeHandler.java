@@ -5,7 +5,7 @@
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-package salifm.pdftros.ui.handlers;
+package salifm.pdftros.ui.mainwindow.handler;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,7 +16,7 @@ import salifm.pdftros.config.Config;
 
 public class SetThemeHandler implements ActionListener {
 
-	private JComboBox<String> themesList;
+	private final JComboBox<String> themesList;
 
 	public SetThemeHandler(JComboBox<String> themesList) {
 		this.themesList = themesList;
