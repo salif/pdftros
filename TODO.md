@@ -1,6 +1,5 @@
 - Copy to "Decide later" if no checkbox is selected
 - Auto detect if it's already added
-- Load and Save Config
 - Add Config panel to settings
 - Add executable and desktop launcher
 - Add footer to MainWindow with Author, License, Github and button

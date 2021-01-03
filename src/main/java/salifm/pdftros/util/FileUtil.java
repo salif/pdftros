@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+
 import salifm.pdftros.config.Config;
 
 public class FileUtil {
@@ -30,7 +31,11 @@ public class FileUtil {
 		return Path.of(Config.getMainDir(), ps);
 	}
 
-	public static void initFolders(Path... ps) throws IOException {
+	public static void initFolders() throws IOException {
+		Path[] ps = new Path[]{
+				FileUtil.getPath(),
+				FileUtil.getPath(Config.getAllDir()),
+				FileUtil.getPath(Config.getOrgDir())};
 		for (final Path p : ps) {
 			if (!Files.isDirectory(p)) {
 				Files.createDirectory(p);

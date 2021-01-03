@@ -7,9 +7,12 @@
 
 package salifm.pdftros;
 
-import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
+
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+
 import salifm.pdftros.config.Config;
 import salifm.pdftros.ui.AddWindow;
 import salifm.pdftros.ui.MainWindow;
@@ -18,12 +21,10 @@ import salifm.pdftros.util.FileUtil;
 public class App {
 
 	public void start(String[] args) {
+		Config.sync();
 		setTheme(Config.getLookAndFeel());
 		try {
-			FileUtil.initFolders(
-				FileUtil.getPath(),
-				FileUtil.getPath(Config.getAllDir()),
-				FileUtil.getPath(Config.getOrgDir()));
+			FileUtil.initFolders();
 		} catch (Throwable t) {
 			showError(t);
 			return;

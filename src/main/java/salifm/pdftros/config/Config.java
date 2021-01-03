@@ -8,31 +8,40 @@
 package salifm.pdftros.config;
 
 import java.nio.file.Path;
-
-import salifm.pdftros.App;
+import java.util.prefs.BackingStoreException;
+import java.util.prefs.Preferences;
 
 public class Config {
+	private static final Preferences preferences = Preferences.userRoot().node("salifm/pdftros/config/Config");
 	private static final String DEFAULT_LOOK_AND_FEEL = "com.sun.java.swing.plaf.gtk.GTKLookAndFeel";
+	private static String userHome;
+	private static String lookAndFeel;
+	private static String mainDir;
+	private static String allDir;
+	private static String orgDir;
 
-	private static String lookAndFeel = DEFAULT_LOOK_AND_FEEL;
-	private static String mainDir = "pdfs";
-	private static String allDir = "all";
-	private static String orgDir = "organized";
+	public static void sync() {
+		userHome = System.getProperty("user.home");
+		lookAndFeel = preferences.get("lookAndFeel", DEFAULT_LOOK_AND_FEEL);
+		mainDir = preferences.get("mainDir", "pdfs");
+		allDir = preferences.get("allDir", "all");
+		orgDir = preferences.get("orgDir", "organized");
+	}
 
 	public static String getLookAndFeel() {
 		return lookAndFeel;
 	}
 
 	public static void setLookAndFeel(String lookAndFeel) {
-		Config.lookAndFeel = lookAndFeel;
+		preferences.put("lookAndFeel", lookAndFeel);
 	}
 
 	public static String getMainDir() {
-		return Path.of(System.getProperty("user.home"), mainDir).toString();
+		return Path.of(userHome, mainDir).toString();
 	}
 
 	public static void setMainDir(String mainDir) {
-		Config.mainDir = mainDir;
+		preferences.put("mainDir", mainDir);
 	}
 
 	public static String getAllDir() {
@@ -40,7 +49,7 @@ public class Config {
 	}
 
 	public static void setAllDir(String allDir) {
-		Config.allDir = allDir;
+		preferences.put("allDir", allDir);
 	}
 
 	public static String getOrgDir() {
@@ -48,11 +57,10 @@ public class Config {
 	}
 
 	public static void setOrgDir(String orgDir) {
-		Config.orgDir = orgDir;
+		preferences.put("orgDir", orgDir);
 	}
 
-	public static void save() {
-		// TODO
-		App.showError(new Exception("Not implemented yet!"));
+	public static void flush() throws BackingStoreException {
+		preferences.flush();
 	}
 }

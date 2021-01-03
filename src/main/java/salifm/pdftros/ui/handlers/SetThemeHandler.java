@@ -7,9 +7,10 @@
 
 package salifm.pdftros.ui.handlers;
 
-import javax.swing.JComboBox;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JComboBox;
 
 import salifm.pdftros.config.Config;
 
@@ -24,6 +25,6 @@ public class SetThemeHandler implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Config.setLookAndFeel((String) this.themesList.getSelectedItem());
-		Config.save();
+		Config.sync();
 	}
 }
