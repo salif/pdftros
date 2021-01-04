@@ -7,6 +7,8 @@
 
 package salifm.pdftros.ui.mainwindow;
 
+import java.awt.GridLayout;
+
 import javax.swing.JPanel;
 
 public class MainWindowPanel extends JPanel {
@@ -14,6 +16,7 @@ public class MainWindowPanel extends JPanel {
 	private static final long serialVersionUID = 5620631415732606469L;
 
 	public MainWindowPanel() {
-		super.add(new ThemePanel());
+		super(new GridLayout(0, 1));
+		super.add(new ConfigPanel());
 	}
 }

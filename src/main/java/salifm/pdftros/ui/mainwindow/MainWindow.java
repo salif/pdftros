@@ -7,6 +7,8 @@
 
 package salifm.pdftros.ui.mainwindow;
 
+import javax.swing.JScrollPane;
+
 import salifm.pdftros.config.Config;
 import salifm.pdftros.ui.Window;
 
@@ -16,6 +18,7 @@ public class MainWindow extends Window {
 
 	public MainWindow() {
 		super("pdftros settings", Config.getMainWindowWidth(), Config.getMainWindowHeight());
-		super.setContentPane(new MainWindowPanel());
+		super.setContentPane(new JScrollPane(new MainWindowPanel()));
+		super.pack();
 	}
 }

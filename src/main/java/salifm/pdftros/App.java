@@ -71,6 +71,10 @@ public class App {
 		}
 	}
 
+	public static void showInfo(String text) {
+		JOptionPane.showMessageDialog(null, text);
+	}
+
 	public static void showError(Throwable t) {
 		t.printStackTrace();
 		JOptionPane.showMessageDialog(null, t.toString(), "Error!", JOptionPane.ERROR_MESSAGE);

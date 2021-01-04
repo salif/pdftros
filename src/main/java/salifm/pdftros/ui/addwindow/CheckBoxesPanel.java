@@ -7,7 +7,6 @@
 
 package salifm.pdftros.ui.addwindow;
 
-import java.awt.FlowLayout;
 import java.util.Set;
 
 import javax.swing.JCheckBox;
@@ -18,7 +17,6 @@ public class CheckBoxesPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	public CheckBoxesPanel(Set<JCheckBox> checkboxes, String[] folders) {
-		super(new FlowLayout());
 		this.sync(folders, checkboxes);
 	}
 
