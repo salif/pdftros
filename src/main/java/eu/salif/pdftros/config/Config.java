@@ -1,24 +1,25 @@
 /*
-  Copyright (c) 2021 Salif Mehmed
+  Copyright 2021 Salif Mehmed
   This Source Code Form is subject to the terms of the Mozilla Public
   License, v. 2.0. If a copy of the MPL was not distributed with this
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-package salifm.pdftros.config;
+package eu.salif.pdftros.config;
 
 import java.nio.file.Path;
 import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 
 public class Config {
-	private static final Preferences preferences = Preferences.userRoot().node("salifm/pdftros/config/Config");
+	private static final Preferences preferences = Preferences.userRoot().node("eu/salif/pdftros/config/Config");
 	private static final String DEFAULT_LOOK_AND_FEEL = "com.sun.java.swing.plaf.gtk.GTKLookAndFeel";
 	private static String userHome;
 	private static String lookAndFeel;
 	private static String mainDir;
 	private static String allDir;
 	private static String orgDir;
+	private static String waitingDir;
 	private static int addWindowWidth;
 	private static int addWindowHeight;
 	private static int mainWindowWidth;
@@ -30,8 +31,9 @@ public class Config {
 		mainDir = preferences.get("mainDir", "pdfs");
 		allDir = preferences.get("allDir", "all");
 		orgDir = preferences.get("orgDir", "organized");
-		addWindowWidth = preferences.getInt("addWindowWidth", 512);
-		addWindowHeight = preferences.getInt("addWindowHeight", 512);
+		waitingDir = preferences.get("waitingDir", "waiting");
+		addWindowWidth = preferences.getInt("addWindowWidth", 500);
+		addWindowHeight = preferences.getInt("addWindowHeight", 400);
 		mainWindowWidth = preferences.getInt("mainWindowWidth", 512);
 		mainWindowHeight = preferences.getInt("mainWindowHeight", 512);
 	}
@@ -44,8 +46,12 @@ public class Config {
 		preferences.put("lookAndFeel", lookAndFeel);
 	}
 
+	public static Path getFullMainDir() {
+		return Path.of(userHome, getMainDir());
+	}
+
 	public static String getMainDir() {
-		return Path.of(userHome, mainDir).toString();
+		return mainDir;
 	}
 
 	public static void setMainDir(String mainDir) {
@@ -66,6 +72,14 @@ public class Config {
 
 	public static void setOrgDir(String orgDir) {
 		preferences.put("orgDir", orgDir);
+	}
+
+	public static String getWaitingDir() {
+		return waitingDir;
+	}
+
+	public static void setWaitingDir(String waitingDir) {
+		preferences.put("waitingDir", waitingDir);
 	}
 
 	public static int getAddWindowWidth() {

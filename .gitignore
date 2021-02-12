@@ -17,4 +17,5 @@ pdftros.iml
 .vscode/
 .idea/
 target/
+/ignore/
 .DS_Store

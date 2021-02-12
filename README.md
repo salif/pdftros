@@ -5,7 +5,7 @@
 Dependencies: jdk and maven
 
 ```sh
-git clone https://github.com/salifm/pdftros
+git clone https://github.com/salif/pdftros
 cd pdftros
 mvn package
 ```

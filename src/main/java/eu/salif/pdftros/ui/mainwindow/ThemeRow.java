@@ -1,11 +1,11 @@
 /*
-  Copyright (c) 2021 Salif Mehmed
+  Copyright 2021 Salif Mehmed
   This Source Code Form is subject to the terms of the Mozilla Public
   License, v. 2.0. If a copy of the MPL was not distributed with this
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-package salifm.pdftros.ui.mainwindow;
+package eu.salif.pdftros.ui.mainwindow;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -18,8 +18,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
-import salifm.pdftros.App;
-import salifm.pdftros.config.Config;
+import eu.salif.pdftros.App;
+import eu.salif.pdftros.config.Config;
 
 public class ThemeRow extends JPanel {
 

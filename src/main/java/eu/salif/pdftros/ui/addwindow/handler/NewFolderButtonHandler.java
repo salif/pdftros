@@ -1,11 +1,11 @@
 /*
-  Copyright (c) 2021 Salif Mehmed
+  Copyright 2021 Salif Mehmed
   This Source Code Form is subject to the terms of the Mozilla Public
   License, v. 2.0. If a copy of the MPL was not distributed with this
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-package salifm.pdftros.ui.addwindow.handler;
+package eu.salif.pdftros.ui.addwindow.handler;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,17 +16,17 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 
-import salifm.pdftros.App;
-import salifm.pdftros.ui.addwindow.CheckBoxesPanel;
-import salifm.pdftros.util.FileUtil;
+import eu.salif.pdftros.App;
+import eu.salif.pdftros.ui.addwindow.CheckBoxesPanel;
+import eu.salif.pdftros.util.FileUtil;
 
 
-public class NewFolderHandler implements ActionListener {
+public class NewFolderButtonHandler implements ActionListener {
 
 	private final CheckBoxesPanel checkBoxesPanel;
 	private final Set<JCheckBox> checkboxes;
 
-	public NewFolderHandler(CheckBoxesPanel checkBoxesPanel, Set<JCheckBox> checkboxes) {
+	public NewFolderButtonHandler(CheckBoxesPanel checkBoxesPanel, Set<JCheckBox> checkboxes) {
 		this.checkBoxesPanel = checkBoxesPanel;
 		this.checkboxes = checkboxes;
 	}
